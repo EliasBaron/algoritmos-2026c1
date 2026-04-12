@@ -14,7 +14,7 @@ struct TrieNode
 {
   TrieNode *childrens[10];
   bool isEnd;
-  int cantHijos; // ← nuevo
+  int cantHijos;
 
   TrieNode()
   {
@@ -31,7 +31,7 @@ bool insert(TrieNode *root, string number)
 
   for (char c : number)
   {
-    int idx = c - '0'; // ojo: usamos '0' en vez de 'a' porque son dígitos
+    int idx = c - '0'; // usamos '0' en vez de 'a' porque son dígitos
 
     if (actual->isEnd == true)
       return false; // caso 1: este nodo es fin de un número anterior → inconsistente
@@ -45,8 +45,6 @@ bool insert(TrieNode *root, string number)
     actual = actual->childrens[idx];
   }
 
-  // caso 2: terminamos de insertar, ¿el nodo final ya tiene hijos?
-  // ¿cómo detectarías eso?
   actual->isEnd = true;
 
   return actual->cantHijos == 0;
