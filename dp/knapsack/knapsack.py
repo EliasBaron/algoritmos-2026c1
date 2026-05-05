@@ -37,10 +37,10 @@ def reconstruct(i, amount):
 
     if knapsack(i, amount) == knapsack(i - 1, amount):
         return reconstruct(i - 1, amount)
-    else:
-        s = reconstruct(i - 1, amount - items[i][1])
-        s.append(i)
-        return s
+
+    s = reconstruct(i - 1, amount - items[i][1])
+    s.append(i)
+    return s
 
 
 def solve():
