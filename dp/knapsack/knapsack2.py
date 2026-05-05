@@ -10,7 +10,6 @@ NEG_INF = -(10**18)
 M = {}
 N = 0
 
-# items[0] es dummy
 # items = [(0, 0), (value, weight), ...]
 items = []
 

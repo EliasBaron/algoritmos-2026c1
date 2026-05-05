@@ -8,22 +8,22 @@ M = {}
 monedas = []
 
 
-def coins(suma):
+def coins(resto):
     # Encontramos una solución valida, retornamos 1
-    if suma == 0:
+    if resto == 0:
         return 1
     # Nos pasamos, rama invalida.
-    if suma < 0:
+    if resto < 0:
         return 0
 
-    if suma not in M:
+    if resto not in M:
         coincidencias = 0
         for moneda in monedas:
-            coincidencias = (coincidencias + coins(suma - moneda)) % MOD
+            coincidencias = (coincidencias + coins(resto - moneda)) % MOD
 
-        M[suma] = coincidencias
+        M[resto] = coincidencias
 
-    return M[suma]
+    return M[resto]
 
 
 def solve():

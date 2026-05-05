@@ -14,10 +14,13 @@ def backtracking(actual, disponibles, derecha, fichas_puestas=0):
     if fichas_puestas == N and puede_colocar(actual, derecha):
         return True
     for i, disponible in enumerate(disponibles):
+        # Recorto las disponibles y me quedo con las anteriores y las siguientes a i.
         nuevas = disponibles[:i] + disponibles[i + 1 :]
         if puede_colocar(actual, disponible):
+            # Se propaga para arriba la solución
             if backtracking(disponible, nuevas, derecha, fichas_puestas + 1):
                 return True
+        # Doy vuelta la tupla (La ficha)
         disponible_reversed = disponible[::-1]
         if puede_colocar(actual, disponible_reversed):
             if backtracking(disponible_reversed, nuevas, derecha, fichas_puestas + 1):
