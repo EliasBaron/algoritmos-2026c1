@@ -48,7 +48,7 @@ def solve():
     values = list(map(int, input().split()))
     weights = list(map(int, input().split()))
 
-    items = [(0, 0)] + list(zip(values, weights))
+    items = list(zip(values, weights))
 
     M.clear()
 
