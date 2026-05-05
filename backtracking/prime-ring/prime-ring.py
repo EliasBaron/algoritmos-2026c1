@@ -21,8 +21,8 @@ def backtracking(elegidos=None, candidatos=None):
     if candidatos is None:
         candidatos = set(range(2, N + 1))
 
-    if len(elegidos) + 1 == N:
-        ultimo = next(iter(candidatos))
+    if len(elegidos) == N - 1:
+        ultimo = list(candidatos)[0]
         if es_primo(elegidos[-1] + ultimo) and es_primo(1 + ultimo):
             print(" ".join(str(x) for x in elegidos + [ultimo]))
             return

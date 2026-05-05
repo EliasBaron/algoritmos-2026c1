@@ -1,5 +1,8 @@
 import sys
 
+sys.setrecursionlimit(1000000)
+
+
 INF = float("inf")
 
 M = {}
@@ -8,7 +11,7 @@ M = {}
 books = []
 
 
-# Queremos devolver, el numero maximo de paginas que podemos llevarnos con un monto total.
+# Queremos devolver, el numero maximo de paginas que podemos llevarnos con un monto dado.
 def book(i, amount):
     if amount < 0:
         return -INF
