@@ -39,6 +39,7 @@ def solve():
     global N, grid, M
     N = int(input())
     grid = [input().strip() for _ in range(N)]
+    print(grid)
     M.clear()
     print(paths(0, 0))
     print(reconstruct(0, 0))
