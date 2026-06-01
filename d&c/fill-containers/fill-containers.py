@@ -23,16 +23,16 @@ def solve():
         _, m = map(int, line.split())
         vasijas = list(map(int, input().split()))
 
-        low = max(vasijas) - 1  # invariante: la respuesta está en (low, high]
+        low = max(vasijas)
         high = sum(vasijas)
 
-        while high > low + 1:
+        while low < high:
             mid = (low + high) // 2
             if puede_llenar(vasijas, m, mid):
                 high = mid
             else:
-                low = mid
-        print(high)
+                low = mid + 1
+        print(low)
 
 
 solve()
