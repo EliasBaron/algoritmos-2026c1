@@ -27,11 +27,13 @@ def solve():
     for nodo in range(1, N + 1):
         if nodo not in visitado:
             dfs(nodo)
-            representantes.append(nodo)  # guardás uno por componente
+            representantes.append(nodo)  # se guarda uno por componente
 
-    print(len(representantes) - 1)
+    print(len(representantes) - 1)  # Cantidad de caminos a poner
     for i in range(len(representantes) - 1):
-        print(representantes[i], representantes[i + 1])
+        print(
+            representantes[i], representantes[i + 1]
+        )  # Iteramos mostrando las conexiones entre los representantes.
 
 
 solve()
