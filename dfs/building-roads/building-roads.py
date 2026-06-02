@@ -19,6 +19,7 @@ def solve():
     global visitado, representantes, grafo
 
     N, M = map(int, input().split())
+
     for _ in range(M):
         u, v = map(int, input().split())
         grafo[u].append(v)
