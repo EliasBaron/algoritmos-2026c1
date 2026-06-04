@@ -1,18 +1,22 @@
-def antimonotonicity(number_list):
-    transformed_list = []
-    result = 1
-
-    # Saber si lo ultimo que hice fue mayor o menor, y en base a eso. Si es lo contrario sumar 1.
-
-    return result
+def longest_alternating(fred):
+    mary = [fred[0]]
+    need_low = True
+    for i in range(1, len(fred)):
+        if need_low and fred[i] < mary[-1]:
+            mary.append(fred[i])
+            need_low = False
+        elif not need_low and fred[i] > mary[-1]:
+            mary.append(fred[i])
+            need_low = True
+    return len(mary)
 
 
 def solve():
     T = int(input())
     for _ in range(T):
-        numbers = list(map(int, input().split()))
-
-        print(antimonotonicity(numbers))
+        data = list(map(int, input().split()))
+        fred = data[1:]
+        print(longest_alternating(fred))
 
 
 solve()
