@@ -1,5 +1,7 @@
 import heapq
-from collections import defaultdict
+import sys
+
+input = sys.stdin.readline
 
 INF = float("inf")
 
@@ -21,10 +23,12 @@ def dijkstra(grafo, origen, destino, n):
                 dist[vecino][1] = d + peso // 2
                 heapq.heappush(heap, (d + peso // 2, vecino, 1))
 
+    return min(dist[destino][0], dist[destino][1])
+
 
 def solve():
     n, m = map(int, input().split())
-    grafo = defaultdict(list)
+    grafo = [[] for _ in range(n + 1)]
     for _ in range(m):
         a, b, c = map(int, input().split())
         grafo[a].append((b, c))

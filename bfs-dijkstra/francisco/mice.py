@@ -30,6 +30,8 @@ def dijkstra(G, src):
 def main():
     c = int(input())
     for i in range(c):
+        input()
+
         n, e, t, m = int(input()), int(input()), int(input()), int(input())
 
         G = [[] for _ in range(n + 1)]
