@@ -10,15 +10,15 @@ def dists_from(G, src, n):
     for _ in range(n):
         if not process:
             break
-        for w in process:
+        for w in process:        # reseteo los flags de los nodos de esta ronda
             changed[w] = False
-        prev, process = process, []
-        for v in prev:
-            for w, d in G[v]:
-                if dist[w] < dist[v] + d:
+        prev, process = process, []   # prev = a procesar, process = nuevo (vacío)
+        for v in prev:           # por cada nodo que cambió antes
+            for w, d in G[v]:    # miro sus aristas
+                if dist[w] < dist[v] + d:   # si mejora (maximiza)
                     dist[w] = dist[v] + d
-                    if not changed[w]:
-                        process.append(w)
+                    if not changed[w]:      # si no lo agregué ya esta ronda
+                        process.append(w)   # lo proceso la próxima
                     changed[w] = True
     return dist, changed
 
