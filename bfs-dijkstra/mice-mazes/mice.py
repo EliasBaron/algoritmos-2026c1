@@ -1,7 +1,4 @@
 """
-Author: Francisco Soulignac
-Time in UVA: 0s
-
 Solución: Dijkstra con las aristas del revés empezando de la salida
 """
 

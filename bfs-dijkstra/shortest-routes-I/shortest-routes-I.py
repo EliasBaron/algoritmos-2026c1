@@ -1,3 +1,5 @@
+# Dijkstra base
+
 import heapq
 import sys
 
