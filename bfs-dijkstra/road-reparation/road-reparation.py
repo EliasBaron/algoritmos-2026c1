@@ -41,9 +41,10 @@ def solve():
     for c, v, w in E:
         if uf.find(v) != uf.find(w):
             result += c
-            e += 1
+            e += 1  # Sumo a la cantidad total conexiones realizadas entre componentes disconexas.
             uf.unite(v, w)
 
+    # Si no logre conectar todas las componentes disconexas (Todas las ciudades) entonces es imposible realizar las reparaciones.
     if e < n - 1:
         print("IMPOSSIBLE")
     else:
