@@ -1,6 +1,4 @@
-"""
-Solución: Dijkstra con las aristas del revés empezando de la salida
-"""
+# Dijkstra invertido
 
 import heapq
 import sys

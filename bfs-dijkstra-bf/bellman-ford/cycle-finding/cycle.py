@@ -1,4 +1,4 @@
-# Bellman-Ford
+# Bellman-Ford con detección de ciclo
 
 import sys
 

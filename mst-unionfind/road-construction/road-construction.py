@@ -1,3 +1,5 @@
+# Union-Find dinamico
+
 import sys
 
 sys.setrecursionlimit(1000000)

@@ -1,4 +1,4 @@
-# Union find
+# Union find puro
 
 import sys
 input = sys.stdin.readline

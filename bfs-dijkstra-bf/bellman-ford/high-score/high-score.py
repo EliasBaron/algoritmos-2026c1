@@ -1,3 +1,5 @@
+# Bellman-Ford con reconstrucción del ciclo
+
 import sys
 input = sys.stdin.readline
 MINF = float('-inf')
