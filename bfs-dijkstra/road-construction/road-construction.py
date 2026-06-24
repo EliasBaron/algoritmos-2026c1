@@ -1,5 +1,3 @@
-# Kruskal, se ordenan las aristas por costo, se recorre de menor a mayor y se usa union find.
-
 import sys
 
 sys.setrecursionlimit(1000000)
@@ -30,27 +28,23 @@ class UF:
 def solve():
     n, m = map(int, input().split())
 
-    E = []
+    L = []
     for _ in range(m):
-        v, w, c = map(int, input().split())
-        E.append((c, v, w))
-    E.sort()
+        v, w = map(int, input().split())
+        L.append((v, w))
 
     uf = UF(n + 1)
 
-    result = 0
-    e = 0
-    for c, v, w in E:
+    number_components = n
+    max_size = 1
+    for v, w in L:
         if uf.find(v) != uf.find(w):
-            result += c
-            e += 1  # Sumo a la cantidad total conexiones realizadas entre componentes disconexas.
             uf.unite(v, w)
-
-    # El MST necesita n-1 aristas, si no logre conectar todas las componentes (Todas las ciudades) entonces tengo un grafo disconexo. O sea, es imposible la solución.
-    if e < n - 1:
-        print("IMPOSSIBLE")
-    else:
-        print(result)
+            number_components = number_components - 1
+            max_size = max(
+                max_size, uf.s[uf.find(v)]
+            )  # Hago la comparación con la raiz de v, ya que en las raices es en donde está el valor del size correcto.
+        print(number_components, max_size)
 
 
 solve()
